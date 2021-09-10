@@ -1,10 +1,12 @@
 import React from "react";
-// import { GlobalStyle } from "./GlobalStyle";
+import { GlobalStyle } from "./GlobalStyle";
+import Timer from './components/Timer';
 
 function App() {
   return (
-    <>
-      <h1>Pomodoro Timer</h1>
+    <> 
+      <Timer />      
+      <GlobalStyle />
     </>
   );
 }
