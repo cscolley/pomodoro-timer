@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --width: 500px;
+    --width: 460px;
     --white: #fafafa;
     --darkGrey: rgba(0, 0, 0, 0.87);
     --paradisePink: #ed3d63;
@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     --midnightBlue: #161b7f;
     --darkOrchid: #8d3fd0;
     --electricBlue: #06b3d7;
+    --myYellow: #ffcc00;
   }
 
   * {
