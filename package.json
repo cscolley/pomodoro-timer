@@ -1,6 +1,6 @@
 {
   "name": "pomodoro-timer",
-  "homepage": "https://cscolley.github.io/pomodoro-timer/",
+  "homepage": "https://cscolley.github.io/pomodoro-timer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
