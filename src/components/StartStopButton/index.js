@@ -4,7 +4,7 @@ import StartStopIcon from "../../images/play_pause_icon.svg";
 
 const StartStopButton = ({ onClick }) => {
   return (
-    <StyledButton>
+    <StyledButton id="start_stop">
       <img
         src={StartStopIcon}
         alt="start stop icon"

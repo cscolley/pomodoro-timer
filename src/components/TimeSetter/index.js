@@ -1,14 +1,14 @@
 import React from "react";
 import { Control, Wrapper, StyledButton } from "./TimeSetter.styles";
 
-const TimeSetter = ({ timeSetterType, length, onPlusClick, onMinusClick }) => {
+const TimeSetter = ({ labelId, decrementId, incrementId, lengthId, timeSetterType, length, onPlusClick, onMinusClick }) => {
   return (
     <Wrapper>
-      <h3>{timeSetterType}</h3>
+      <h3 id={labelId}>{timeSetterType}</h3>
       <Control>
-        <StyledButton onClick={onMinusClick}><span>-</span></StyledButton>
-        <span>{length}</span>
-        <StyledButton onClick={onPlusClick}><span>+</span></StyledButton>
+        <StyledButton id={decrementId} onClick={onMinusClick}><span>-</span></StyledButton>
+        <span id={lengthId}>{length}</span>
+        <StyledButton id={incrementId} onClick={onPlusClick}><span>+</span></StyledButton>
       </Control>
     </Wrapper>
   );

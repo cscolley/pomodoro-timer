@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Clock from "../Clock";
 import ResetButton from "../ResetButton";
 import StartStopButton from "../StartStopButton";
@@ -17,6 +17,7 @@ const PomodoroTimer = () => {
   const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
   const [timerType, setTimerType] = useState(SESSION);
   const [running, setRunning] = useState(false);
+  const audioEl = useRef(null);
 
   const handleStartStopButtonClick = () => {
     setRunning(!running);
@@ -28,6 +29,8 @@ const PomodoroTimer = () => {
     setBreakLength(initialBreakLength);
     setTimeLeft(initialTimeLeft);
     setTimerType(SESSION);
+    audioEl.current.pause();
+    audioEl.current.currentTime = 0;
   };
 
   const handleSessionMinusClick = () => {
@@ -63,9 +66,8 @@ const PomodoroTimer = () => {
       const interval = setInterval(() => {
         setTimeLeft(timeLeft - 1);
         if (timeLeft === 0) {
-          const audio = document.getElementById("beep");
-          audio.currentTime = 0;
-          audio.play();
+          audioEl.current.currentTime = 0;
+          audioEl.current.play();
           if (timerType === SESSION) {
             setTimerType(BREAK);
             setTimeLeft(breakLength * 60);
@@ -75,16 +77,26 @@ const PomodoroTimer = () => {
             setTimeLeft(sessionLength * 60);
           }
         }
-      }, 10);
+      }, 1000);
       return () => clearInterval(interval);
     }
   });
 
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+      if (minutes === 0) {
+        minutes = "00";
+      }
+    }
     let seconds = Math.floor(time - minutes * 60);
-    seconds = seconds < 10 ? "0" + seconds : seconds;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+      if (seconds === 0) {
+        seconds = "00";
+      }
+    }
     return `${minutes}:${seconds}`;
   };
 
@@ -93,12 +105,20 @@ const PomodoroTimer = () => {
       <h1>Pomodoro Timer</h1>
       <TimeSettersWrapper>
         <TimeSetter
+          labelId="session-label"
+          decrementId="session-decrement"
+          incrementId="session-increment"
+          lengthId="session-length"
           timeSetterType="Session Length"
           length={sessionLength}
           onMinusClick={handleSessionMinusClick}
           onPlusClick={handleSessionPlusClick}
         />
         <TimeSetter
+          labelId="break-label"
+          decrementId="break-decrement"
+          incrementId="break-increment"
+          lengthId="break-length"
           timeSetterType="Break Length"
           length={breakLength}
           onMinusClick={handleBreakMinusClick}
@@ -114,6 +134,7 @@ const PomodoroTimer = () => {
         <ResetButton onClick={handleResetButtonClick} />
       </ButtonsWrapper>
       <audio
+        ref={audioEl}
         id="beep"
         src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
       ></audio>
