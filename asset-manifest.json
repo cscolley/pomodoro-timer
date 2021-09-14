@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/pomodoro-timer/static/js/main.beab7d01.chunk.js",
+    "main.js.map": "/pomodoro-timer/static/js/main.beab7d01.chunk.js.map",
+    "runtime-main.js": "/pomodoro-timer/static/js/runtime-main.728d2b13.js",
+    "runtime-main.js.map": "/pomodoro-timer/static/js/runtime-main.728d2b13.js.map",
+    "static/js/2.ae01c7b2.chunk.js": "/pomodoro-timer/static/js/2.ae01c7b2.chunk.js",
+    "static/js/2.ae01c7b2.chunk.js.map": "/pomodoro-timer/static/js/2.ae01c7b2.chunk.js.map",
+    "static/js/3.45aeaeba.chunk.js": "/pomodoro-timer/static/js/3.45aeaeba.chunk.js",
+    "static/js/3.45aeaeba.chunk.js.map": "/pomodoro-timer/static/js/3.45aeaeba.chunk.js.map",
+    "index.html": "/pomodoro-timer/index.html",
+    "static/js/2.ae01c7b2.chunk.js.LICENSE.txt": "/pomodoro-timer/static/js/2.ae01c7b2.chunk.js.LICENSE.txt",
+    "static/media/play_pause_icon.e1b436ff.svg": "/pomodoro-timer/static/media/play_pause_icon.e1b436ff.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.728d2b13.js",
+    "static/js/2.ae01c7b2.chunk.js",
+    "static/js/main.beab7d01.chunk.js"
+  ]
+}
