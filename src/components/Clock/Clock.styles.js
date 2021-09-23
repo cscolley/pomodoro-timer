@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     color: var(--myYellow);
     font-family: "Digital-7 Mono", "Roboto", sans-serif;
     font-weight: normal;
-    margin: 0;
+    margin-bottom: 30px;
   }
 
   #timer-label {
