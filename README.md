@@ -1,6 +1,6 @@
 # Pomodoro Timer
 
-I built this project as part of my [FreeCodeCamp.org] (https://www.freecodecamp.org/) Front End Development Libraries Certification.
+I built this project as part of my [FreeCodeCamp.org](https://www.freecodecamp.org/) Front End Development Libraries Certification.
 
 Technology used:
 - React js
@@ -10,4 +10,4 @@ The Pomodoro Technique is a productivity system to avoid procrastination or gett
 
 In this web app the session and break time can be adjusted to suit the user. An alarm sounds at the end of the work session and break.
 
-Please see my [Demo] (https://cscolley.github.io/pomodoro-timer/).
+Please see my [Demo](https://cscolley.github.io/pomodoro-timer/).
