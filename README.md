@@ -1,6 +1,6 @@
 # Pomodoro Timer
 
-I built this project as part of my FreeCodeCamp.org Front EndDevelopment Libraries Certification.
+I built this project as part of my FreeCodeCamp.org Front End Development Libraries Certification.
 
 Technology used:
 - React js
